@@ -1,0 +1,3 @@
+[submodule "postseam-example-api"]
+	path = postseam-example-api
+	url = https://github.com/postseam/postseam-example-api
