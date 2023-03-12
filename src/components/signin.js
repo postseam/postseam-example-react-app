@@ -50,7 +50,7 @@ export function SignIn() {
 
         Auth.setUser(user);
 
-        window.location.href = '/home';
+        // window.location.href = '/home';
     } catch (err){
         console.error(err);
         setError('Something went wrong, Please try again later.');
