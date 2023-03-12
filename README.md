@@ -31,4 +31,17 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### Deploying Our Application
+
+We use Firebase Hosting to serve our application. In order to do this for your application, you'll need to follow a few steps.
+
+1. Copy the `firebase.json` file in this repository. You shouldn't need to make any changes here.
+
+2. Add secrets to your GitHub repository to be used for GitHub Actions. We've used a GitHub environment for our example.
+
+3. Install the Firebase CLI: `npm install -g firebase-tools`
+
+4. Run the init command to setup Firebase Hosting for your repository: `firebase init hosting:github`
+
+5. Finally, update the GitHub Workflow files to reference the secrets you created (be sure to follow the TODO in our example).

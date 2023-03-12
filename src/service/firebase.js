@@ -2,13 +2,13 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 const app = initializeApp({
-    apiKey: process.env.REACT_APP_FIREBASE_apiKey,
-    authDomain: process.env.REACT_APP_FIREBASE_authDomain,
-    projectId: process.env.REACT_APP_FIREBASE_projectId,
-    storageBucket: process.env.REACT_APP_FIREBASE_storageBucket,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_messageSenderId,
-    appId: process.env.REACT_APP_FIREBASE_apId,
-    measurementId: process.env.REACT_APP_FIREBASE_measurementId
+    apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
+    appId: process.env.REACT_APP_FIREBASE_APPID,
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID
   });
 const auth = getAuth(app);
 
