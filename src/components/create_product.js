@@ -2,13 +2,6 @@ import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Container from '@mui/material/Container';
-
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
@@ -18,10 +11,8 @@ import Typography from '@mui/material/Typography';
 import {Header} from './header';
 import {AuthContext} from '../index';
 
-import {Product as PostseamProduct} from '../generated/pb/postseam/example/v1/product_pb';
 import {ProductServicePromiseClient} from '../generated/pb/postseam/example/v1/product_service_grpc_web_pb';
 import {CreateProductRequest} from '../generated/pb/postseam/example/v1/product_service_pb';
-import { FormControl } from '@mui/material';
 
 export function CreateProduct() {
     const Auth = React.useContext(AuthContext);
@@ -50,7 +41,7 @@ export function CreateProduct() {
                 .setProductName(productName)
                 .setProductDescription(productDescription);
 
-            const product = await productClient.createProduct(req);
+            await productClient.createProduct(req);
             window.location.href = '/product';
         } catch (err){
             console.log(err);

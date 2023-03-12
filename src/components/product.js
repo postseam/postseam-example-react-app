@@ -20,9 +20,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import {Header} from './header';
 import {AuthContext} from '../index';
 
-import {Product as PostseamProduct} from '../generated/pb/postseam/example/v1/product_pb';
 import {ProductServicePromiseClient} from '../generated/pb/postseam/example/v1/product_service_grpc_web_pb';
-import {ListProductsRequest, ListProductsResponse} from '../generated/pb/postseam/example/v1/product_service_pb';
+import {ListProductsRequest} from '../generated/pb/postseam/example/v1/product_service_pb';
 
 export function Product() {
     const productClient = new ProductServicePromiseClient(process.env.REACT_APP_POSTSEAM_SERVER_URL);
@@ -40,7 +39,7 @@ export function Product() {
       }, [Auth]);
 
     React.useEffect(() => {
-      getProducts();
+      getProducts(); // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [page, rowsPerPage]);
 
     const handleChangePage = (event, newPage) => {
