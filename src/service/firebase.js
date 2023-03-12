@@ -12,13 +12,15 @@ const app = initializeApp({
   });
 const auth = getAuth(app);
 
-export const getCurrentUser = () => {
-    if (auth !== null && auth.currentUser !== null){
-        return auth.currentUser;
-    }
-
-    return null;
-};
+export const onAuthStateChange = (callback) => {
+    return auth.onAuthStateChanged(user => {
+      if (user) {
+        callback(user);
+      } else {
+        callback(user);
+      }
+    });
+  }
 
 export const signOutCurrentUser = async () => {
     try {
